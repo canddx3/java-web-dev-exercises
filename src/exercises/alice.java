@@ -1,7 +1,7 @@
 package exercises;
 import java.util.Scanner;
 
-public class Alice {
+public class alice {
     public static void main(String[] args) {
         String txt = "Alice was beginning to get very " +
                 "tired of sitting by her sister on the " +

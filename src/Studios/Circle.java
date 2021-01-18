@@ -1,7 +1,7 @@
 package Studios;
 
 public class Circle {
-        public static Double getArea( Integer radius) {
+        public static Double getArea(double radius) {
             return 3.14 * radius * radius;
         }
     }

@@ -1,7 +1,7 @@
 package exercises;
 import java.util.Scanner;
 
-public class Numeric {
+public class numeric {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("miles driven?");
