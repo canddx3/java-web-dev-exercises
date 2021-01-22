@@ -1,4 +1,4 @@
-package exercises;
+package exercises.lsn2conceptchecks;
 import java.util.*;
 
 public class sum {

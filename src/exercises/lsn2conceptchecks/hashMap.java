@@ -1,4 +1,4 @@
-package exercises;
+package exercises.lsn2conceptchecks;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
