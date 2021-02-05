@@ -1,29 +1,64 @@
 package Studios.restaurant;
+
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
 public class Menu {
-    public static void main ( String[] args ) {
-        MenuItem menuItem = new MenuItem("fries", 1.00, "appetizer", true);
-        Date date = new Date();
+    private Date lastUpdated;
+    private ArrayList<MenuItem> items;
+    private HashMap<String, ArrayList<MenuItem>> categoryToItemsMap = new HashMap<>();
+
+    public Menu ( ArrayList<MenuItem> items ) {
+        setItems(items);
     }
 
-    private Date date;
-    private ArrayList<String> menuItem = new ArrayList<>();
-
-
-    public Menu(ArrayList<String> menuItem) {
-        this.menuItem = menuItem;
-        date = new Date();
+    public Menu ( Date d, ArrayList<MenuItem> items ) {
+        setItems(items);
+        this.lastUpdated = d;
     }
 
-    private Date getDate() {
-        return date; }
-    private void setDate(Date date) {
-        this.date = date; }
+    public void addItem ( MenuItem newItem1 ) {
+        if (this.items.contains(newItem1)) {
+            System.out.println("already exists");
+            return;
+        }
+        this.items.add(newItem1);
+        this.lastUpdated = new Date();
+    }
 
-    private ArrayList<String> getMenuItem() {
-        return menuItem; }
-    public void setMenuItem(ArrayList<String> menuItem) {
-        this.menuItem = menuItem; this.date = new Date(); }
+    public void printMenu (MenuItem item) {
+        for (int i = 0; i < items.size(); i++) {
+            System.out.println(item.getDescription());
+        }
+    }
+
+    public void printItem ( MenuItem newItem2 ) {
+        System.out.println(newItem2.getDescription());
+        return;
+    }
+
+    public void removeItem ( MenuItem newItem3 ) {
+        this.items.remove(newItem3);
+        System.out.println(newItem3.getDescription());
+    }
+
+    public void setItems ( ArrayList<MenuItem> items ) {
+        this.items = items;
+        this.lastUpdated = new Date();
+    }
+
+    public Date getLastUpdated () {
+        return this.lastUpdated;
+    }
+
+    public String getMenuString () {
+        String str = "";
+        for (MenuItem item : this.items) {
+            str += item.getCategory() + " (" + item.getPrice() + ")" + "-" + item.getDescription();
+        }
+        return str;
+    }
 }
+
+
