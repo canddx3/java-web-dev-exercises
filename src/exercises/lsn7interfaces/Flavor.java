@@ -1,4 +1,4 @@
-package org.launchcode.java.demos.lsn7interfaces;
+package exercises.lsn7interfaces;
 
 import java.util.ArrayList;
 
