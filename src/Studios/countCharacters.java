@@ -29,14 +29,14 @@ public class countCharacters {
                 continue;
             }
             if (!characterCounts.containsKey(character)) {
-                characterCounts.put(character, 0);
+                characterCounts.put(character, 1);
             } else {
                 characterCounts.put(character, characterCounts.get(character) + 1);
             }
         }
 
         for (Map.Entry<Character, Integer> entry : characterCounts.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
+            System.out.println("Keys: " + entry.getKey() + " " + "Values: " + entry.getValue());
         }
     }
 }

@@ -1,9 +1,9 @@
 package Studios.Quizzes;
 
 public class LinearScale extends Question {
-    private int scaleBegin;
-    private int scaleEnd;
-    private int answer;
+    private final int scaleBegin;
+    private final int scaleEnd;
+    private final int answer;
 
     public LinearScale(String question, int answer, int scaleBegin, int scaleEnd) {
         super(question);
@@ -24,7 +24,7 @@ public class LinearScale extends Question {
 
     @Override
     public double gradeAnswer(String answerString) {
-        int index = Character.valueOf(answerString.charAt(0)) - 97;
+        int index = answerString.charAt(0) - 97;
         if(index + scaleBegin == answer) {
             return 1;
         } else {

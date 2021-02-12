@@ -6,21 +6,20 @@ package exercises.lsn3classes1;
 public class Student {
 
     private String name;
-    private int studentId;
-    private int numberOfCredits;
-    private float gpa;
+    private final int studentId;
+    private final int numberOfCredits;
+    private final float gpa;
 
     //  construct a new student with given fields
     public Student(String name, int studentId, int numberOfCredits, float gpa) {
-        setName(name);
-        setNumberOfCredits(numberOfCredits);
+        this.name = name;
         this.studentId = studentId;
         this.numberOfCredits = numberOfCredits;
         this.gpa = gpa;
     }
 
     public String greetPerson() {
-        return "Hi" + this.name.substring(0,1) + " " +this.studentId;
+        return "Hi" + this.name.charAt(0) + " " +this.studentId;
     }
 
     //  Getters and Setters
@@ -38,22 +37,4 @@ public class Student {
     public int getStudentId () {
         return studentId;
     }
-    public void setStudentId ( int studentId ) {
-        this.studentId = studentId;
-    }
-
-    public int getNumberOfCredits () {
-        return numberOfCredits;
-    }
-    public void setNumberOfCredits ( int numberOfCredits ) {
-        this.numberOfCredits = numberOfCredits;
-    }
-
-    public float getGpa () {
-        return gpa;
-    }
-    public void setGpa ( double gpa ) {
-        this.gpa = (float) gpa;
-    }
-
 }

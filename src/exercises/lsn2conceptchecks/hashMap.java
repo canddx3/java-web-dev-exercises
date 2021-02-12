@@ -26,9 +26,9 @@ public class hashMap {
                 // Print class roster
                 System.out.println("\nClass roster:");
                 for (Map.Entry<Integer, String> stud : studId.entrySet()) {
-                    System.out.println(stud.getKey() +" " + stud.getValue());
+                    System.out.println("Student Id: " + stud.getKey() + " " + "Student Name: " + stud.getValue());
                 }
-            System.out.println(studId.size());
+            System.out.println("Class Size: " + studId.size());
             }
         }
 
