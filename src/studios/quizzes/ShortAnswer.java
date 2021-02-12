@@ -1,4 +1,4 @@
-package Studios.Quizzes;
+package studios.quizzes;
 
 public class ShortAnswer extends Question {
 

@@ -8,7 +8,7 @@ public class numeric {
         Integer miles = input.nextInt();
         System.out.println("gallons?");
         Integer gallons = input.nextInt();
-        Integer MPG = miles/gallons;
+        int MPG = miles/gallons;
         System.out.println("Mpg = " + MPG);
 
     }

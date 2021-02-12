@@ -4,10 +4,7 @@ public abstract class Cat {
 
     private boolean tired = false;
     private boolean hungry = false;
-    private double weight;
-
-    // The biological family for all cat species
-    private final String family = "Felidae";
+    private final double weight;
 
     public Cat (double aWeight) {
         weight = aWeight;
@@ -20,36 +17,12 @@ public abstract class Cat {
         return tired;
     }
 
-    public void setTired(boolean aTired) {
-        tired = aTired;
-    }
-
     public boolean isHungry() {
         return hungry;
     }
 
-    public void setHungry(boolean aHungry) {
-        hungry = aHungry;
-    }
-
     public double getWeight() {
         return weight;
-    }
-
-    public void setWeight(double aWeight) {
-        weight = aWeight;
-    }
-
-    public String getFamily() {
-        return family;
-    }
-
-    /**** Instance Methods ****/
-
-    // A cat is rested and hungry after it sleeps
-    public void sleep() {
-        tired = false;
-        hungry = true;
     }
 
     // Eating makes a cat not hungry
@@ -62,7 +35,5 @@ public abstract class Cat {
 
         hungry = false;
     }
-
-    public  abstract String noise ();
 
 }

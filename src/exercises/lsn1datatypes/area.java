@@ -8,7 +8,7 @@ public class area {
         Double length = input.nextDouble();
         System.out.println("width?");
         Double width = input.nextDouble();
-        Double rectangle = width * length;
+        double rectangle = width * length;
         System.out.println("rectangle area is " + rectangle);
     }
 }

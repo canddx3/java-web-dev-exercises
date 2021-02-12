@@ -3,9 +3,9 @@ package exercises.lsn7interfaces;
 import java.util.ArrayList;
 
 public abstract class Ingredient {
-    private String name;
-    private double cost;
-    private ArrayList<String> allergens;
+    private final String name;
+    private final double cost;
+    private final ArrayList<String> allergens;
 
     public Ingredient(String aName, double aCost, ArrayList<String> someAllergens){
         name = aName;
@@ -17,24 +17,12 @@ public abstract class Ingredient {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public double getCost() {
         return cost;
     }
 
-    public void setCost(double cost) {
-        this.cost = cost;
-    }
-
     public ArrayList<String> getAllergens() {
         return allergens;
-    }
-
-    public void setAllergens(ArrayList<String> allergens) {
-        this.allergens = allergens;
     }
 
     @Override

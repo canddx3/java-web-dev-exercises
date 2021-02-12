@@ -7,15 +7,11 @@ public class Student {
 
     private String name;
     private final int studentId;
-    private final int numberOfCredits;
-    private final float gpa;
 
     //  construct a new student with given fields
-    public Student(String name, int studentId, int numberOfCredits, float gpa) {
+    public Student ( String name, int studentId ) {
         this.name = name;
         this.studentId = studentId;
-        this.numberOfCredits = numberOfCredits;
-        this.gpa = gpa;
     }
 
     public String greetPerson() {

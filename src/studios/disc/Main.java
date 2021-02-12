@@ -1,10 +1,6 @@
-package Studios.Disc;
-
-import Studios.Disc.CD;
-import Studios.Disc.DVD;
+package studios.disc;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
@@ -12,7 +8,7 @@ public class Main {
 
         // TODO: Declare and initialize a CD and a DVD object.
 
-        List<String> songs = new ArrayList<>();
+        ArrayList<String> songs = new ArrayList<>();
 
         songs.add("Waterloo");
         songs.add("Yesterday");
@@ -20,7 +16,7 @@ public class Main {
         songs.add("Bohemian Rhapsody");
         songs.add("Thriller");
 
-        List<String> movies = new ArrayList<>();
+        ArrayList<String> movies = new ArrayList<>();
 
         movies.add("Play");
         movies.add("Scene Selection");
@@ -28,8 +24,8 @@ public class Main {
         movies.add("Settings");
         movies.add("BehindTheScenes");
 
-        CD myCd = new CD("Def Leppard Album", 2.2, 5.0, 2.8, (ArrayList<String>) songs, "CD");
-        DVD myDvd = new DVD("Lord Of The Rings", 2.2, 5.0, 2.8, (ArrayList<String>) movies, "DVD");
+        CD myCd = new CD("Def Leppard Album", 2.2, 5.0, 2.8, songs, "CD");
+        DVD myDvd = new DVD("Lord Of The Rings", 2.2, 5.0, 2.8, movies, "DVD");
 
         // TODO: Call each CD and DVD method to verify that they work as expected.
         myCd.spinDisc();

@@ -1,4 +1,4 @@
-package Studios.Quizzes;
+package studios.quizzes;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,25 +6,24 @@ import java.util.Collections;
 
 public class Checkbox extends Question {
 
-    private ArrayList<String> answers;
-    private ArrayList<String> nonAnswers;
-    private ArrayList<String> options;
+    private final ArrayList<String> answers;
+    private final ArrayList<String> options;
 
     public Checkbox ( String question, String[] answers, String[] nonAnswers) {
         super(question);
-        this.answers = new ArrayList<String>(Arrays.asList(answers));
-        this.nonAnswers = new ArrayList<String>(Arrays.asList(nonAnswers));
-        this.options = new ArrayList<String>(this.answers);
-        this.options.addAll(this.nonAnswers);
+        this.answers = new ArrayList<>(Arrays.asList(answers));
+        ArrayList<String> nonAnswers1 = new ArrayList<>(Arrays.asList(nonAnswers));
+        this.options = new ArrayList<>(this.answers);
+        this.options.addAll(nonAnswers1);
         Collections.shuffle(this.options);
     }
 
     @Override
     public String toString() {
-        String output = this.getQuestion() + "\n";
+        StringBuilder output = new StringBuilder(this.getQuestion() + "\n");
         for (int i = 0; i < options.size(); i++) {
             char letter = (char)(97+i);
-            output = output + "\t" + letter + ") " + options.get(i) + "\n";
+            output.append("\t").append(letter).append(") ").append(options.get(i)).append("\n");
         }
         return output + "Choose one or more answers: ";
     }
@@ -32,9 +31,9 @@ public class Checkbox extends Question {
     @Override
     public double gradeAnswer(String answersString) {
         double score = 0;
-        ArrayList<String> answerArr = new ArrayList<String>(Arrays.asList(answersString.split("")));
+        ArrayList<String> answerArr = new ArrayList<>(Arrays.asList(answersString.split("")));
         for (String answerChar: answerArr) {
-            int charCode = Character.valueOf(answerChar.charAt(0));
+            int charCode = answerChar.charAt(0);
             if(charCode<97 || charCode >= options.size()+97) continue;
             int index = charCode - 97;
             String answer = options.get(index);

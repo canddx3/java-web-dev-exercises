@@ -1,4 +1,4 @@
-package Studios.Quizzes;
+package studios.quizzes;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,10 +9,10 @@ public class Quiz {
     private double correctAnswers = 0;
 
     public Quiz(Question[] q) {
-        this.questions = new ArrayList<Question>(Arrays.asList(q));
+        this.questions = new ArrayList<>(Arrays.asList(q));
     }
 
-    public Quiz(){};
+    public Quiz(){}
 
     public void startQuiz(){
         Scanner scanner = new Scanner(System.in);

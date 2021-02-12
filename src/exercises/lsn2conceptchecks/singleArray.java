@@ -1,12 +1,11 @@
 package exercises.lsn2conceptchecks;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class singleArray {
     public static void main(String[] args) {
         int[] intArray = {1, 1, 2, 3, 5, 8};
-        for(int i = 0; i < intArray.length; i++) {
-            System.out.print(intArray[i]);
+        for (int j : intArray) {
+            System.out.print(j);
         }
         System.out.println("\n");
         for (Integer numb: intArray) {

@@ -1,9 +1,9 @@
-package exercises.technology.Main;
+package exercises.technology.main;
 
 import java.util.Date;
 
 public abstract class AbstractEntity {
-    private long Id;
+    private final long Id;
 
     public AbstractEntity() {
         Date date = new Date();

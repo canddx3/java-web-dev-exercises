@@ -1,4 +1,4 @@
-package Studios.Quizzes;
+package studios.quizzes;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,32 +6,31 @@ import java.util.Collections;
 
 public class MultiChoice extends Question {
 
-    private String answer;
-    private ArrayList<String> nonAnswers;
-    private ArrayList<String> options;
+    private final String answer;
+    private final ArrayList<String> options;
 
     public MultiChoice(String question, String answer, String[] nonAnswers) {
         super(question);
         this.answer = answer;
-        this.nonAnswers = new ArrayList<String>(Arrays.asList(nonAnswers));
-        this.options = new ArrayList<String>(this.nonAnswers);
+        ArrayList<String> nonAnswers1 = new ArrayList<>(Arrays.asList(nonAnswers));
+        this.options = new ArrayList<>(nonAnswers1);
         this.options.add(this.answer);
         Collections.shuffle(this.options);
     }
 
     @Override
     public String toString() {
-        String output = this.getQuestion() + "\n";
+        StringBuilder output = new StringBuilder(this.getQuestion() + "\n");
         for (int i = 0; i < options.size(); i++) {
             char letter = (char)(97+i);
-            output = output + "\t" + letter + ") " + options.get(i) + "\n";
+            output.append("\t").append(letter).append(") ").append(options.get(i)).append("\n");
         }
         return output + "Choose one answer: ";
     }
 
     @Override
     public double gradeAnswer(String answerString) {
-        int index = Character.valueOf(answerString.charAt(0)) - 97;
+        int index = answerString.charAt(0) - 97;
         if(answer.equals(options.get(index))) {
             return 1;
         } else {

@@ -1,4 +1,4 @@
-package Studios;
+package studios;
 import java.util.Scanner;
 
 public class Area {

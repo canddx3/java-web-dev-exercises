@@ -1,11 +1,11 @@
-package exercises.technology.Main;
+package exercises.technology.main;
 
 public class Computer extends AbstractEntity {
     private String os;
     private String processor;
     private boolean hasKeyboard;
 
-    public Computer ( Integer Id, String os, String processor, boolean hasKeyboard ) {
+    public Computer ( String os, String processor, boolean hasKeyboard ) {
         super();
         this.os = os;
         this.processor = processor;

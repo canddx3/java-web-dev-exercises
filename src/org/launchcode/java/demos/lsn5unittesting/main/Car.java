@@ -2,11 +2,11 @@ package org.launchcode.java.demos.lsn5unittesting.main;
 
 public class Car {
 
-    private String make;
-    private String model;
-    private int gasTankSize;
+    private final String make;
+    private final String model;
+    private final int gasTankSize;
     private double gasTankLevel;
-    private double milesPerGallon;
+    private final double milesPerGallon;
     private double odometer = 0;
 
     public Car(String make, String model, int gasTankSize, double milesPerGallon) {
@@ -22,24 +22,12 @@ public class Car {
         return make;
     }
 
-    public void setMake(String make) {
-        this.make = make;
-    }
-
     public String getModel() {
         return model;
     }
 
-    public void setModel(String model) {
-        this.model = model;
-    }
-
     public int getGasTankSize() {
         return gasTankSize;
-    }
-
-    public void setGasTankSize(int gasTankSize) {
-        this.gasTankSize = gasTankSize;
     }
 
     public double getGasTankLevel() {
@@ -53,18 +41,6 @@ public class Car {
         this.gasTankLevel = gasTankLevel;
     }
 
-    public double getMilesPerGallon() {
-        return milesPerGallon;
-    }
-
-    public void setMilesPerGallon(double milesPerGallon) {
-        this.milesPerGallon = milesPerGallon;
-    }
-
-    public double getOdometer() {
-        return odometer;
-    }
-
     /**
      * Drive the car an amount of miles. If not enough fuel, drive as far as fuel allows.
      * Adjust fuel levels based on amount needed to drive the distance requested.
@@ -76,13 +52,13 @@ public class Car {
     {
         //adjust fuel based on mpg and miles requested to drive
         double maxDistance = this.milesPerGallon * this.gasTankLevel;
-        /**the double below uses some syntax called the ternary operator.
-         * if the value of miles is greater than the value of maxDistance,
-         * then milesAbleToTravel = maxDistance.
-         * otherwise, if miles is not greater than maxDistance,
-         * then milesAbleToTravel = miles
+        /*the double below uses some syntax called the ternary operator.
+          if the value of miles is greater than the value of maxDistance,
+          then milesAbleToTravel = maxDistance.
+          otherwise, if miles is not greater than maxDistance,
+          then milesAbleToTravel = miles
          */
-        double milesAbleToTravel = miles > maxDistance ? maxDistance : miles;
+        double milesAbleToTravel = Math.min(miles, maxDistance);
         double gallonsUsed = milesAbleToTravel / this.milesPerGallon;
         this.gasTankLevel = this.gasTankLevel - gallonsUsed;
         this.odometer += milesAbleToTravel;

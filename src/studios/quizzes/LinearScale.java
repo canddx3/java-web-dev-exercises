@@ -1,4 +1,4 @@
-package Studios.Quizzes;
+package studios.quizzes;
 
 public class LinearScale extends Question {
     private final int scaleBegin;
@@ -14,10 +14,10 @@ public class LinearScale extends Question {
 
     @Override
     public String toString(){
-        String output = this.getQuestion() + "\n";
+        StringBuilder output = new StringBuilder(this.getQuestion() + "\n");
         for (int i = 0; i < scaleEnd - scaleBegin; i++) {
             char letter = (char)(97+i);
-            output = output + "\t" + letter + ") " + (scaleBegin + i) + "\n";
+            output.append("\t").append(letter).append(") ").append(scaleBegin + i).append("\n");
         }
         return output + "Choose one answer: ";
     }

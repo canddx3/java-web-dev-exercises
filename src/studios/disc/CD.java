@@ -1,8 +1,8 @@
-package Studios.Disc;
+package studios.disc;
 
 import java.util.ArrayList;
 
-public class DVD extends BaseClass implements OpticalDisc {
+public class CD extends BaseClass implements OpticalDisc {
 
     // TODO: Implement your custom interface.
 
@@ -10,19 +10,16 @@ public class DVD extends BaseClass implements OpticalDisc {
     //  need to be declared separately.
 
 
-    public DVD ( String name, double availableSpace, double totalSpace, double usedSpace, ArrayList<String> contents, String discType ) {
+    public CD ( String name, double availableSpace, double totalSpace, double usedSpace, ArrayList<String> contents, String discType ) {
         super(name, availableSpace, totalSpace, usedSpace, contents, discType);
     }
 
     @Override
     public void spinDisc () {
-        System.out.println("A DVD spins at a rate of 570 - 1600 rpm.");
+        System.out.println("A CD spins at a rate of 200 - 500 rpm. ");
     }
-
     @Override
-    public void read () {
+    public void read (){
         System.out.println("Name: " + getName() + " contents: " + getContents() + " disc type: " + getDiscType());
     }
-
-
 }

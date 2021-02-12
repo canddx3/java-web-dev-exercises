@@ -1,4 +1,4 @@
-package Studios.Disc;
+package studios.disc;
 
 public interface OpticalDisc {
     void spinDisc();

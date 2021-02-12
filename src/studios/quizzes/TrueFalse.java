@@ -1,7 +1,7 @@
-package Studios.Quizzes;
+package studios.quizzes;
 
 public class TrueFalse extends Question{
-    private Boolean answer;
+    private final Boolean answer;
 
     public TrueFalse(String question, Boolean answer ) {
         super(question);
@@ -10,8 +10,7 @@ public class TrueFalse extends Question{
 
     @Override
     public String toString() {
-        String output = this.getQuestion() + "\n\ta) true\n\tb) false\n";
-        return output;
+        return this.getQuestion() + "\n\ta) true\n\tb) false\n";
     }
 
     @Override

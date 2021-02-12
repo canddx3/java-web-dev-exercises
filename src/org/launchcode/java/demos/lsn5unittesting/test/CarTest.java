@@ -21,7 +21,7 @@ public class CarTest {
     //TODO: constructor sets gasTankLevel properly
     @Test
     public void testInitialGasTank() {
-        assertFalse(test_car.getGasTankLevel()==0);
+        assertNotEquals(0, test_car.getGasTankLevel(), 0.0);
     }
     //TODO: gasTankLevel is accurate after driving within tank range
     @Test

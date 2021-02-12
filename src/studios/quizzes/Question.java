@@ -1,8 +1,8 @@
-package Studios.Quizzes;
+package studios.quizzes;
 
 public abstract class Question {
 
-    private String question;
+    private final String question;
 
     public Question(String question) {
         this.question = question;

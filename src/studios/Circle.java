@@ -1,4 +1,4 @@
-package Studios;
+package studios;
 
 public class Circle {
         public static Double getArea(double radius) {
